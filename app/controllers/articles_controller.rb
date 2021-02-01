@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
     if @article.save
       redirect_to article_path(@article)
     else
-      #redirect to course
-      redirect_to course_path(@article)
+      #redirect to courses
+      redirect_to courses_path
   end
 end
