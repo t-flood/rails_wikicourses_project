@@ -1,0 +1,4 @@
+<h1>Choose a topic</h1>
+<% @topics.each do |f| %>
+<%= link_to f.title, topic_path(f)%><br>
+<% end %>

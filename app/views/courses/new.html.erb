@@ -1,5 +1,13 @@
-<h1>What do you want to learn about</h1>
-title <!-- form for course, title -->
-topic <!-- Select from topics-->
-first article <!-- form for first article -->
-<!-- redirect to article edit page -->
+<h1>What do you want to learn about?</h1>
+<%= form_for @course do |f| %>
+  <%= f.label :topic_id, "Topic"%>
+  <%= f.collection_select :topic_id, Topic.all, :id, :title %>
+  <br>
+  <br>
+  <%= f.label "Course name" %>
+  <%= f.text_field :name %>
+  <br>
+  <br>
+  <%= f.submit %>
+
+<% end %>

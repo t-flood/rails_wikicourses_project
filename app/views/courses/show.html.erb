@@ -1,1 +1,6 @@
 <!-- view a course -->
+<h1><%= @course.name %></h1>
+<p><%= @course.intro%></p>
+<%= @course.articles.each do |a| %>
+<%= link_to a.title, article_path(a) %>
+<% end %>

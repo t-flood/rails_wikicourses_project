@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Topic.delete_all
+Topic.create!([{:title => "Arts and culture"},
+  {:title => "Geography and places"},
+  {:title => "Health and fitness "},
+  {:title => "History and events"},
+  {:title => "Mathematics and abstractions"},
+  {:title => "Natural sciences and nature"},
+  {:title => "Philosophy and thinking"},
+  {:title => "Religion and spirituality"},
+  {:title => "Social sciences and society"},
+  {:title => "Technology and applied sciences"}])

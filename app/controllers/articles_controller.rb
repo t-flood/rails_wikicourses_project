@@ -1,20 +1,32 @@
 class ArticlesController < ApplicationController
+  before_action :set_course
+
   def new
-    @article = Article.new
+    @article = @course.articles.build
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = @course.articles.find(params[:id])
   end
 
   def create
     article = Wikipedia.find(params[:article][:title])
-    @article = Article.new(title: article.title, iframe_link: article.fullurl)
 
-    if @article.save
-      redirect_to article_path(@article)
+    @article = @course.article.build(
+      title: article.title,
+      iframe_link: article.fullurl
+    )
+
+    if @article.save!
+      redirect_to course_article_path(@course, @article)
     else
-      #redirect to courses
       redirect_to courses_path
+    end
+  end
+
+  private
+
+  def set_course
+    @course = Course.find(params[:course_id])
   end
 end

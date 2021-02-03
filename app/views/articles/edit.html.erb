@@ -1,5 +1,12 @@
-intro <!-- form for intro -->
 
-Article <!-- Article in I frame-->
+<%= form_for :article do |f| %>
+<%= f.label :intro, "Write an introduction:" %>
+<%= f.text_field :intro %>
 
-outro <!-- form for intro -->
+<!-- iframe -->
+
+<%= f.label :intro, "Write an introduction:" %>
+<%= f.text_field :intro %>
+<%= f.submit %>
+<% end %>
+<!-- button to delete -->

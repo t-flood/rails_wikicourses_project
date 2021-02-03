@@ -1,0 +1,9 @@
+<h1><%= @article.course.name %></h1>
+<p><%= @article.course.topic.title %></p>
+
+<%= form_for :article do |f| %>
+<%= f.label :title, "Article title:" %>
+<%= f.text_field :title %>
+<%= f.submit %>
+
+<% end %>
