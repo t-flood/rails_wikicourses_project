@@ -3,10 +3,11 @@
 <!-- form_for conclusion -->
 
 <%= form_for :article do |f| %>
-<%= f.label :intro, "Write an introduction to your course:" %>
-<%= f.text_field :intro %>
-
-<%= f.label :outro, "What's next?" %>
-<%= f.text_field :outro %>
+<h2><%= f.label :overview, "Give an introduction to your course:" %></h2>
+<%= f.text_area :intro %>
+<br>
+<h2><%= f.label :conclusion, "What's next?" %></h2>
+<%= f.text_area :outro %>
+<br>
 <%= f.submit %>
 <% end %>

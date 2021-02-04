@@ -12,15 +12,15 @@ class ArticlesController < ApplicationController
   def create
     article = Wikipedia.find(params[:article][:title])
 
-    @article = @course.article.build(
+    @article = @course.articles.build(
       title: article.title,
       iframe_link: article.fullurl
     )
 
     if @article.save!
-      redirect_to course_article_path(@course, @article)
+      redirect_to edit_course_article_path(@course, @article)
     else
-      redirect_to courses_path
+      render :new
     end
   end
 
