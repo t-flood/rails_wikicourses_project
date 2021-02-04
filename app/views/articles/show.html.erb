@@ -2,3 +2,14 @@
 <!-- iframe -->
 <!-- outro -->
 <!-- next article button -->
+
+<h1>
+  <%= @article.title %>
+</h1>
+
+<div class="mb-4">
+  <p><%= @article.intro %></p>
+  <%= link_to "Edit", edit_course_article_path(@course, @article) %>
+</div>
+
+<%= render "iframe", src: @article.iframe_link %>

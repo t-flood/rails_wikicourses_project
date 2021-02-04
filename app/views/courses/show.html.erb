@@ -2,12 +2,15 @@
 <h1><%= @course.name %></h1>
 <p><%= @course.overview || "No overview" %></p>
 
-<div>
+<div class="mb-4">
+  <h2>Articles</h2>
   <% @course.articles.each do |article| %>
-    <h4><%= link_to article.title, course_article_path(article) %></h4>
-    <p><%= article.overview %></p>
+    <div class="mb-2">
+      <h4><%= link_to article.title, course_article_path(@course, article) %></h4>
+    </div>
   <% end %>
 </div>
 
 <p><%= @course.conclusion || "No conclusion" %></p>
+
 <%= link_to "Edit course", edit_course_path(@course) %>
