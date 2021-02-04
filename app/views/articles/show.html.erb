@@ -9,7 +9,7 @@
 
 <div class="mb-4">
   <p><%= @article.intro %></p>
-  <%= link_to "Edit", edit_course_article_path(@course, @article) %>
+  <%= link_to "Edit", edit_article_path(@article) %>
 </div>
 
 <%= render "iframe", src: @article.iframe_link %>

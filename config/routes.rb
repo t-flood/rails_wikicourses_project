@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :topics
   resources :courses do
-    resources :articles
+    resources :articles, only: [:new, :create]
   end
-
+  resources :articles, except: [:new, :create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

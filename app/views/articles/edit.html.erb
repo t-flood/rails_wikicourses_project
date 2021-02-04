@@ -1,8 +1,6 @@
-<% @course.articles.each do |article| %>
-  <h1><%= article.title %></h1>
-<% end %>
+<h1><%= @article.title %></h1>
 
-<%= bootstrap_form_for [@course, @article] do |f| %>
+<%= bootstrap_form_for @article do |f| %>
   <%= f.text_field :intro, label: "Write an introduction" %>
   <%= render "iframe", src: @article.iframe_link %>
   <%= f.text_field :outro, label: "Write an outro:" %>

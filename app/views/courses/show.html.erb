@@ -6,11 +6,12 @@
   <h2>Articles</h2>
   <% @course.articles.each do |article| %>
     <div class="mb-2">
-      <h4><%= link_to article.title, course_article_path(@course, article) %></h4>
+      <h4><%= link_to article.title, article %></h4>
     </div>
   <% end %>
 </div>
 
 <p><%= @course.conclusion || "No conclusion" %></p>
 
-<%= link_to "Edit course", edit_course_path(@course) %>
+<div><%= link_to "Edit course", edit_course_path(@course) %></div>
+<div><%= link_to "Add article", new_course_article_path(@course) %></div>
