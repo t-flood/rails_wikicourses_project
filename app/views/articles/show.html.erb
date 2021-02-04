@@ -10,6 +10,12 @@
 <div class="mb-4">
   <p><%= @article.intro %></p>
   <%= link_to "Edit", edit_article_path(@article) %>
+  <% if @next_article %>
+    <div><%= link_to "Next article", article_path(@next_article) %></div>
+  <% end %>
+  <% if @previous_article %>
+    <div><%= link_to "Previous article", article_path(@previous_article) %>
+  <% end %>
 </div>
 
 <%= render "iframe", src: @article.iframe_link %>

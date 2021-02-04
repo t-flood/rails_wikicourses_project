@@ -1,6 +1,12 @@
 class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
+
+    articles = Article.order(:id)
+    articles = articles.where(course_id: @article.course_id)
+
+    @next_article = articles.where("id > ?", @article.id).first
+    @previous_article = articles.where("id < ?", @article.id).last
   end
 
   def new
