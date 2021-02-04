@@ -1,12 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<% @course.articles.each do |c| %>
+  <h1><%= c.title %></h1>
+  <% end %>
+<%= bootstrap_form_for [@course, @article] do |f| %>
+  <%= f.text_field :intro, label: "Write an introduction" %>
 
-<%= form_for :article do |f| %>
-<%= f.label :intro, "Write an introduction:" %>
-<%= f.text_field :intro %>
 
-<!-- iframe -->
+<%= render "iframe" %>
 
-<%= f.label :intro, "Write an introduction:" %>
-<%= f.text_field :intro %>
-<%= f.submit %>
+  <%= f.text_field :outro, label: "Write an outro:" %>
+
+<%= f.primary %>
 <% end %>
+<br>
 <!-- button to delete -->
+
+</body>
+</html>

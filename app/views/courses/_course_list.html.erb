@@ -1,0 +1,4 @@
+
+<% @course.articles.each do |a| %>
+Edit: <%= link_to a.title, edit_course_article_path(a) %><br>
+<% end %>

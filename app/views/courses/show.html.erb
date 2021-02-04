@@ -1,8 +1,13 @@
 <!-- view a course -->
 <h1><%= @course.name %></h1>
-<p><%= @course.overview %></p>
-<%= @course.articles.each do |a| %>
-<%= link_to a.title, article_path(a) %>
-<% end %>
-<p> <%= @course.conclusion %> </p>
+<p><%= @course.overview || "No overview" %></p>
+
+<div>
+  <% @course.articles.each do |article| %>
+    <h4><%= link_to article.title, course_article_path(article) %></h4>
+    <p><%= article.overview %></p>
+  <% end %>
+</div>
+
+<p><%= @course.conclusion || "No conclusion" %></p>
 <%= link_to "Edit course", edit_course_path(@course) %>

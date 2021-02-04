@@ -1,13 +1,20 @@
 <!-- form_for  overview-->
 <!-- list of article titles  with delete/edit buttons -->
 <!-- form_for conclusion -->
+<h1><%= @course.name %></h1>
+<br>
+<br>
+<%= bootstrap_form_for @course do |f| %>
+  <h2><%= f.label :overview, "Give an introduction to your course:" %></h2>
+      <%= f.text_area :overview %>
 
-<%= form_for :article do |f| %>
-<h2><%= f.label :overview, "Give an introduction to your course:" %></h2>
-<%= f.text_area :intro %>
+<%= render "course_list"%>
+<!-- button_to courses/:id/articles/new-->
+
+
 <br>
 <h2><%= f.label :conclusion, "What's next?" %></h2>
-<%= f.text_area :outro %>
+<%= f.text_area :conclusion %>
 <br>
-<%= f.submit %>
+<%= f.primary %>
 <% end %>

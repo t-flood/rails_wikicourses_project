@@ -1,8 +1,7 @@
 <h1><%= @article.course.name %></h1>
-<p><%= @article.course.topic.title %></p>
+<h3><%= @article.course.topic.title %></h3>
 
-<%= form_for [@course, @article] do |f| %>
-  <%= f.label :title, "Article title:" %>
-  <%= f.text_field :title %>
-  <%= f.submit %>
+<%= bootstrap_form_for [@course, @article] do |f| %>
+  <%= f.text_field :title, label: "Article title" %>
+  <%= f.primary %>
 <% end %>

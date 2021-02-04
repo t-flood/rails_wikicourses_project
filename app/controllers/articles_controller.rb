@@ -24,9 +24,23 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def edit
+    @article = @course.articles.find(params[:id])
+  end
+
+  def update
+    @article = @course.articles.find(params[:id])
+    @article.update(article_params)
+    redirect_to course_path(@course)
+  end
+
   private
 
   def set_course
     @course = Course.find(params[:course_id])
+  end
+
+  def article_params(*args)
+    params.require(:article).permit(*args)
   end
 end
