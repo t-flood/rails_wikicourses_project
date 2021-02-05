@@ -6,3 +6,7 @@
   <%= f.text_field :outro, label: "Write an outro:" %>
   <%= f.primary %>
 <% end %>
+
+<div class="mb-4">
+  <%= link_to "Delete Article", @article, method: :delete, data: { confirm: "Really?" } %>
+</div>
