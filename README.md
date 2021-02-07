@@ -6,10 +6,9 @@ First, you'll need to install the dependencies:
 
     $ bundle install
 
-Before running this application, you need to set the following environment variables:
+Next, you'll need to configure some environment variables. This project uses dotenv to manage secrets. You can copy the example to get started:
 
-- `GOOGLE_CLIENT_ID`
-- `GOOGLE_CLIENT_SECRET`
+    $ cp .env.example .env
 
 To start the server, run:
 

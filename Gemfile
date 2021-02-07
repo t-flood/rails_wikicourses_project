@@ -34,6 +34,7 @@ gem "bootstrap_form", "~> 4.0"
 gem 'devise'
 gem 'omniauth', '~> 1.9'
 gem 'omniauth-google-oauth2'
+gem 'dotenv-rails', groups: [:development, :test]
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
