@@ -24,13 +24,16 @@ gem 'jbuilder', '~> 2.7'
 gem 'wikipedia-client', require: "wikipedia"
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-gem 'devise'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'pry'
 
 gem "bootstrap_form", "~> 4.0"
+
+gem 'devise'
+gem 'omniauth', '~> 1.9'
+gem 'omniauth-google-oauth2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

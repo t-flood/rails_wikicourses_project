@@ -1,24 +1,20 @@
-# README
+# WikiCourses
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting started
 
-Things you may want to cover:
+First, you'll need to install the dependencies:
 
-* Ruby version
+    $ bundle install
 
-* System dependencies
+Before running this application, you need to set the following environment variables:
 
-* Configuration
+- `GOOGLE_CLIENT_ID`
+- `GOOGLE_CLIENT_SECRET`
 
-* Database creation
+To start the server, run:
 
-* Database initialization
+    $ bundle exec rails server
 
-* How to run the test suite
+To run the test suite, run:
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    $ bundle exec rspec

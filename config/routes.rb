@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root 'application#home'
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'auth' }
   resources :topics
   resources :courses do
     resources :articles, only: [:new, :create]
