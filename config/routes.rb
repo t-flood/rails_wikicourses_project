@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'application#home'
+  get '/recent', to: 'articles#recent'
   devise_for :users, controllers: { omniauth_callbacks: 'auth' }
   resources :topics
   resources :courses do

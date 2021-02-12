@@ -1,4 +1,9 @@
 class ArticlesController < ApplicationController
+  def recent
+    # @articles = Article.order(:created_at).limit(10)
+    @articles = Article.long_articles
+  end
+
   def show
     @article = Article.find(params[:id])
 
