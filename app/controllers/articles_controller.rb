@@ -15,13 +15,9 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    article = Wikipedia.find(params[:article][:title])
-
     @course = Course.find(params[:course_id])
-    @article = @course.articles.build(
-      title: article.title,
-      iframe_link: article.fullurl
-    )
+    @article = @course.articles.build(article_params)
+    @article.load_from_wikipedia
 
     if @article.save
       redirect_to edit_article_path(@article)
@@ -53,6 +49,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:intro, :outro)
+    params.require(:article).permit(:title, :intro, :outro)
   end
 end
