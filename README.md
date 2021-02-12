@@ -13,7 +13,3 @@ Next, you'll need to configure some environment variables. This project uses dot
 To start the server, run:
 
     $ bundle exec rails server
-
-To run the test suite, run:
-
-    $ bundle exec rspec
